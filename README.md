@@ -1,33 +1,116 @@
-# CSCN72030-Sec2-Group18
-Smart Home Monitoring &amp; Control Solution (SCADA/HMI) – F25
+# Smart Home Monitoring & Control System – CSCN72030 (Project III)  
+**Group 18 – Fall 2025**
 
-# Smart Home Monitoring and Control Solution (SCADA/HMI) - Fall 2025
+This repository contains the full implementation of our Smart Home Monitoring & Control Solution (SCADA/HMI). The system simulates real-time monitoring and control of home devices using C# and WPF, with automated tests validating the logic of all device modules.
 
-This repository is for our group project in CSCN72030 – Project III.
+##Team Members  
+- **Emmanuel**
+- **Aya**
+- **Lanna**
+- **Abdulkarim**
 
-We are developing a Smart Home Monitoring and Control System that allows users to monitor and manage home devices such as lights, door locks, fans, temperature, and different sensors from a single dashboard built in C#.
+---
 
-Team Members:  
-- Emmanuel  
-- Aya  
-- Lanna  
-- Abdulkarim  
+#Project Overview  
+The Smart Home Monitoring & Control System provides a centralized dashboard that allows users to:
 
-Project Overview:  
-The main goal of this project is to design and implement a system that can simulate the control and monitoring of multiple home devices through a simple and reliable interface. The system will show live device status and allow users to perform basic actions such as turning devices on and off, adjusting temperature, and checking alerts.
+- Monitor home temperature  
+- Control lighting (on/off, brightness, auto mode)  
+- Lock/unlock the front door  
+- Detect motion in the home  
+- Detect smoke levels  
+- Control ventilation fans  
+- Operate and monitor a security camera  
+- View all device statuses in real time in a unified interface  
 
-Folder Structure (planned):  
-- Domain – device logic (Light, Door Lock, Heater, Fan, Smoke, Motion, Camera, Temperature)  
-- Services – simulation and helper classes  
-- App – main dashboard interface  
+The project follows Agile/Scrum methodology with 3 sprints:  
+**Sprint 1 – Core device logic**  
+**Sprint 2 – Device interaction & automation**  
+**Sprint 3 – Full GUI and system integration**  
 
-Development Plan:  
-Each team member will work on different device modules on separate branches. The team will use issues and pull requests to track progress and review work before merging into the main branch. During integration, we will test the interaction between all modules and the dashboard.
+---
 
-Sprint 1 Goals:  
-- Set up the GitHub repository for the team  
-- Create branches and assign tasks for each module  
-- Begin initial setup and coding of device classes  
-- Prepare the Sprint 1 presentation and demo
+#Features Implemented  
+The final system includes fully functional modules for:
 
-This file will be updated as the project progresses.
+###TemperatureSensor  
+- Real-time temperature updates  
+- Threshold detection  
+- Heating/cooling interactions  
+
+###LightController  
+- ON/OFF  
+- Brightness control  
+- Automatic lighting based on temperature  
+
+###DoorLockController  
+- Manual lock/unlock  
+- Auto-lock after timeout  
+- Unlock triggered by motion  
+
+###MotionSensor  
+- Motion detection  
+- Auto-clear behavior  
+- Integration with door & camera  
+
+###SmokeDetector  
+- Smoke level detection  
+- Auto-clear  
+- Critical smoke alerting  
+
+###FanController  
+- 3-speed ventilation control  
+- Automatic reaction to smoke  
+
+###HeaterController  
+- Heating logic with setpoint  
+- Auto heating  
+- Power level adjustment  
+
+###CameraController  
+- Start/stop streaming  
+- Snapshot  
+- Auto-start on motion  
+
+---
+
+#Dashboard (WPF GUI)
+The GUI allows users to:
+
+- View the status of all 8 devices  
+- Adjust temperature and lighting  
+- Observe motion, smoke, and device alerts  
+- See real-time device changes  
+- Interact with a clean, organized interface  
+
+Screenshot examples included in documentation and slides.
+
+---
+
+#Automated Testing  
+The project includes **32 automated unit tests**, covering:
+
+- Temperature logic  
+- Lighting behavior  
+- Motion & door interaction  
+- Fan and smoke logic  
+- Camera behavior  
+- Coordinator automation rules  
+
+Additional system tests were performed through:
+
+- GUI interaction  
+- UX Testing Plan (5 scenarios)  
+
+**All tests passed successfully.**
+
+---
+
+#Folder Structure  
+```plaintext
+SmartHomeSolution/
+│
+├── SmartHome.Domain/      # All device classes + coordinator logic
+├── SmartHome.GUI/         # WPF application (dashboard)
+├── SmartHome.Tests/       # Unit & integration tests
+└── README.md              # Project documentation
