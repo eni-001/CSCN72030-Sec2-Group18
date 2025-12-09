@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="SmartHome.Wpf.Pages.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="Settings"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0,0,0,16"/>
+
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Automation Modes"
+                               FontSize="16"
+                               FontWeight="SemiBold"/>
+
+                    <CheckBox x:Name="HeaterAutoCheck"
+                              Content="Heater Auto Mode"
+                              Margin="0,10,0,0"
+                              Checked="HeaterAutoCheck_Changed"
+                              Unchecked="HeaterAutoCheck_Changed"/>
+
+                    <CheckBox x:Name="LightAutoCheck"
+                              Content="Light Auto Mode"
+                              Margin="0,6,0,0"
+                              Checked="LightAutoCheck_Changed"
+                              Unchecked="LightAutoCheck_Changed"/>
+
+                    <CheckBox x:Name="CameraAutoCheck"
+                              Content="Camera Auto Mode"
+                              Margin="0,6,0,0"
+                              Checked="CameraAutoCheck_Changed"
+                              Unchecked="CameraAutoCheck_Changed"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

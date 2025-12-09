@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="SmartHome.Wpf.Pages.SecurityPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Security"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Margin="0,0,0,16"/>
+
+        <UniformGrid Grid.Row="1" Columns="3">
+
+            <!-- Door -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Front Door"
+                               FontSize="16"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="DoorStateText"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="DoorLastActionText"
+                               FontSize="11"
+                               Foreground="#6B7280"
+                               TextWrapping="Wrap"/>
+                    <Button Content="Toggle Lock"
+                            Margin="0,12,0,0"
+                            Click="ToggleDoor_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Motion -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Motion Sensor"
+                               FontSize="16"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="MotionStateText"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="MotionLastText"
+                               FontSize="11"
+                               Foreground="#6B7280"/>
+                    <Button Content="Simulate Motion"
+                            Margin="0,12,0,0"
+                            Click="SimulateMotion_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Camera -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Front Camera"
+                               FontSize="16"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="CameraStateText"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="CameraEventText"
+                               FontSize="11"
+                               Foreground="#6B7280"
+                               TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,12,0,0">
+                        <Button Content="Start"
+                                Width="60"
+                                Click="CameraStart_Click"/>
+                        <Button Content="Snapshot"
+                                Width="80"
+                                Margin="8,0,0,0"
+                                Click="CameraSnapshot_Click"/>
+                        <Button Content="Stop"
+                                Width="60"
+                                Margin="8,0,0,0"
+                                Click="CameraStop_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </UniformGrid>
+    </Grid>
+</UserControl>
