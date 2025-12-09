@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="SmartHome.Wpf.Pages.ClimatePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Climate Control"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Margin="0,0,0,16"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left: current climate info -->
+            <Border Style="{StaticResource CardStyle}" Grid.Column="0">
+                <StackPanel>
+                    <TextBlock Text="Indoor Temperature"
+                               FontSize="16"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="CurrentTempText"
+                               FontSize="28"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="TempStatusText"
+                               FontSize="12"
+                               Foreground="#6B7280"/>
+
+                    <TextBlock Text="Heater Status"
+                               FontSize="12"
+                               Foreground="#6B7280"
+                               Margin="0,16,0,0"/>
+                    <TextBlock x:Name="HeaterStateText"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+
+                    <TextBlock Text="Last Event"
+                               FontSize="12"
+                               Foreground="#6B7280"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="HeaterEventText"
+                               FontSize="12"
+                               Foreground="#4B5563"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Right: controls -->
+            <Border Style="{StaticResource CardStyle}" Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Text="Setpoint"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                Margin="0,4,0,0">
+                        <TextBlock x:Name="SetpointValueText"
+                                   FontSize="18"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="°C"
+                                   FontSize="16"
+                                   Margin="4,2,0,0"/>
+                    </StackPanel>
+
+                    <Slider x:Name="SetpointSlider"
+                            Minimum="15"
+                            Maximum="28"
+                            TickFrequency="0.5"
+                            IsSnapToTickEnabled="True"
+                            Margin="0,8,0,0"
+                            ValueChanged="SetpointSlider_ValueChanged"/>
+
+                    <CheckBox x:Name="HeaterAutoModeCheck"
+                              Content="Heater Auto Mode"
+                              Margin="0,12,0,0"
+                              Checked="HeaterAutoModeCheck_Changed"
+                              Unchecked="HeaterAutoModeCheck_Changed"/>
+
+                    <TextBlock Text="Heater Power Level"
+                               FontSize="12"
+                               Foreground="#6B7280"
+                               Margin="0,14,0,0"/>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,4,0,0"
+                                HorizontalAlignment="Left">
+                        <RadioButton Content="1" GroupName="HeaterPower"
+                                     Checked="HeaterPowerRadio_Checked"/>
+                        <RadioButton Content="2" GroupName="HeaterPower"
+                                     Margin="8,0,0,0"
+                                     Checked="HeaterPowerRadio_Checked"/>
+                        <RadioButton Content="3" GroupName="HeaterPower"
+                                     Margin="8,0,0,0"
+                                     Checked="HeaterPowerRadio_Checked"/>
+                        <RadioButton Content="4" GroupName="HeaterPower"
+                                     Margin="8,0,0,0"
+                                     Checked="HeaterPowerRadio_Checked"/>
+                        <RadioButton Content="5" GroupName="HeaterPower"
+                                     Margin="8,0,0,0"
+                                     Checked="HeaterPowerRadio_Checked"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

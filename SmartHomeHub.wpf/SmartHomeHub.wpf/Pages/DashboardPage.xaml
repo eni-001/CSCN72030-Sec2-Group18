@@ -1,0 +1,155 @@
+﻿<UserControl x:Class="SmartHome.Wpf.Pages.DashboardPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Dashboard"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Grid.Row="0"
+                   Margin="0,0,0,16"/>
+
+        <UniformGrid Grid.Row="1"
+                     Rows="2"
+                     Columns="4"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Top">
+
+            <!-- Temperature -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Temperature"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="TempValueText"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="TempStatusText"
+                               FontSize="11"
+                               Foreground="#6B7280"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Heater -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Heater"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="HeaterStateText"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="HeaterPowerText"
+                               FontSize="11"
+                               Foreground="#6B7280"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Light -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Living Room Light"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="LightStateText"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="LightBrightnessText"
+                               FontSize="11"
+                               Foreground="#6B7280"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Door -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Front Door"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="DoorStateText"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="DoorLastActionText"
+                               FontSize="11"
+                               Foreground="#6B7280"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Motion -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Motion Sensor"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="MotionStateText"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="MotionLastText"
+                               FontSize="11"
+                               Foreground="#6B7280"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Smoke -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Smoke Detector"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="SmokeStateText"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="SmokeLevelText"
+                               FontSize="11"
+                               Foreground="#6B7280"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Fan -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Ceiling Fan"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="FanSpeedText"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="FanEnergyText"
+                               FontSize="11"
+                               Foreground="#6B7280"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Camera -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Front Camera"
+                               FontSize="14"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="CameraStateText"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                    <TextBlock x:Name="CameraEventText"
+                               FontSize="11"
+                               Foreground="#6B7280"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+
+        </UniformGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,110 @@
+﻿<Window x:Class="SmartHome.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pages="clr-namespace:SmartHome.Wpf.Pages"
+        mc:Ignorable="d"
+        Title="Smart Home Hub" Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="#F3F6FB">
+
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <!-- sidebar -->
+            <ColumnDefinition Width="*"/>
+            <!-- main area -->
+        </Grid.ColumnDefinitions>
+
+        <!-- ==== SIDEBAR ==== -->
+        <Border Grid.Column="0" Background="#0F172A">
+            <StackPanel Margin="16">
+                <TextBlock Text="Smart Home"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,16"/>
+                <!-- nav "buttons" (visual only for now) -->
+                <Button Content="Dashboard"
+        Style="{StaticResource NavButtonStyle}"
+        Click="DashboardNav_Click"/>
+
+                <Button Content="Climate"
+        Style="{StaticResource NavButtonStyle}"
+        Click="ClimateNav_Click"/>
+
+                <Button Content="Lighting"
+        Style="{StaticResource NavButtonStyle}"
+        Click="LightingNav_Click"/>
+
+                <Button Content="Security"
+        Style="{StaticResource NavButtonStyle}"
+        Click="SecurityNav_Click"/>
+
+                <Button Content="Energy"
+        Style="{StaticResource NavButtonStyle}"
+        Click="EnergyNav_Click"/>
+
+                <Button Content="Settings"
+        Style="{StaticResource NavButtonStyle}"
+        Click="SettingsNav_Click"/>
+
+            </StackPanel>
+        </Border>
+
+        <!-- ==== MAIN AREA ==== -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- header -->
+                <RowDefinition Height="*"/>
+                <!-- cards -->
+                <RowDefinition Height="Auto"/>
+                <!-- detail panel -->
+            </Grid.RowDefinitions>
+
+            <!-- HEADER -->
+            <Border Grid.Row="0" Background="#F8FAFF" Padding="16" CornerRadius="16"
+                    BorderBrush="#E5E7EB" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="32" Height="32" CornerRadius="16" Background="#2563EB">
+                            <TextBlock Text="🏠" FontSize="18"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <StackPanel Margin="8,0,0,0">
+                            <TextBlock Text="My Smart Home" FontSize="18" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                        <TextBlock x:Name="ClockText"
+                                   Text="12:00 PM"
+                                   FontSize="12"
+                                   Foreground="#374151"
+                                   HorizontalAlignment="Right"/>
+                        <TextBlock x:Name="SummaryText"
+                                   Text="8 devices online · 0 alerts"
+                                   FontSize="11"
+                                   Foreground="#6B7280"
+                                   HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <ContentControl x:Name="MainContent"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Margin="0,10,0,0"/>
+
+        </Grid>
+    </Grid>
+</Window>

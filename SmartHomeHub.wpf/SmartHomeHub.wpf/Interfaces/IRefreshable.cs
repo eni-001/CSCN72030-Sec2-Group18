@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartHome.Domain
+namespace SmartHomeHub.wpf.Interfaces
 {
-    public interface IDevice
+    public interface IRefreshable
     {
-        string Name { get; }
-        string Status { get; }
+        void Refresh();
     }
 }
